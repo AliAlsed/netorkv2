@@ -1,0 +1,117 @@
+{ 
+        "Interface":{
+          "title":"Interface",
+          "data":[
+          {
+            "id":"0",
+            "title":"show interface",
+            "command":"[admin@MikroTik] >interface print"
+          },
+          {
+            "id":"1",
+            "title":"disable ether",
+            "command":"[admin@MikroTik] >interface ethernet disable etherx"
+          },
+          {
+            "id":"2",
+            "title":"enable ether",
+            "command":"[admin@MikroTik] >interface ethernet enable etherx"
+          },       
+          {
+            "id":"3",
+            "title":"monitor traffic",
+            "command":"[admin@MikroTik] >interface monitor-traffic etherx"
+          },
+          {
+            "id":"4",
+            "title":"add comment to ether",
+            "command":"[admin@MikroTik] >interface ethernet set comment=INTERNET numbers=etherx"
+          },       {
+            "id":"5",
+            "title":" refer to number card 0",
+            "command":"[admin@MikroTik] >interface ethernet monitor 0"
+          }
+        ]
+      },
+      "SetupVLAN":{
+        "title":"Setup VLAN",
+        "data":[
+        {
+          "id":"0",
+          "command":"[admin@MikroTik] >interface vlan add name=vlan10 vlan_id4 interface =etherx"
+        },
+        {
+          "id":"1",
+          "command":"[admin@MikroTik] >interface vlan print"
+        },
+        {
+          "id":"2",
+          "command":"[admin@MikroTik] >interface vlan disable 0"
+        }
+      ]
+    },
+    "System":{
+      "title":"System",
+      "data":[
+      {
+        "id":"0",
+        "title":"Check  RouterBOARD Bootloader version",
+        "command":"[admin@MikroTik]> system routerboard print"
+      },
+      {
+        "id":"1",
+        "title":"upgrade  RouterBOARD  version",
+        "command":"[admin@MikroTik] > system routerboard upgrade"
+      },
+      {
+        "id":"2",
+        "title":"reset RouterBOARD rconfiguration",
+        "command":"[admin@MikroTik] > system reset-configuration"
+      },
+      {
+        "id":"3",
+        "title":"system reboot",
+        "command":"[admin@MikroTik] > system reboot"
+      },
+      {
+        "id":"4",
+        "title":"Change router name",
+        "command":"[admin@MikroTik] > system identity set name=MK"
+      },
+      {
+        "id":"5",
+        "title":"license level",
+        "command":"[admin@MikroTika] > system license print"
+      },
+      {
+        "id":"6",
+        "title":"set telnet address",
+        "command":"[admin@MikroTik] > system telnet address=x.x.x.x"
+      },
+      {
+        "id":"7",
+        "title":"system shutdown",
+        "command":"[admin@MikroTika] > system shutdown"
+      }
+    ]
+  }
+    }
+     
+          
+         
+    
+  
+
+
+
+
+
+
+
+
+
+
+      
+    
+  
+  

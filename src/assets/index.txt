@@ -1,0 +1,171 @@
+ [
+   ,
+       ,
+        "Bridge setup":{
+          "title":"Bridge setup",
+          "data":[
+          {
+            "id":"0",
+            "command":"[admin@MikroTik] >interface bridge add name=bridge1"
+          },
+          {
+            "id":"1",
+            "command":"[admin@MikroTik] > interface bridge port  add bridge=bridge1 interface=etherx"
+          },
+          {
+            "id":"2",
+            "command":"[admin@MikroTik] > interface bridge port print"
+          }
+        ]
+      },
+        "Create a name for network card (interface)":{
+          "title":"Create a name for network card (interface)",
+          "data":[
+          {
+            "id":"0",
+            "command":"[admin@MikroTik] > interface ethernet print"
+          },
+          {
+            "id":"1",
+            "command":"[admin@MikroTik] > interface ethernet set 0 name=LAN"
+          }
+        ]
+      },
+        "Assign ip address to network card (interface)":{
+          "title":"Create a name for network card (interface)",
+          "data":[
+          {
+            "id":"0",
+            "command":"[admin@MikroTik] > ip address add address=x.x.x.x/prefix interface=etherx"
+          },
+          {
+            "id":"1",
+            "command":"[admin@MikroTik] > ip address print"
+          }
+        ]
+      },
+        "Create NAT rule":{
+          "title":"Create NAT rule",
+          "data":[
+          {
+            "id":"0",
+            "command":"[admin@MikroTik] > ip firewal nat add chain=srcnat action=masquerade out-inace=etherx"
+          },
+          {
+            "id":"1",
+            "command":"[admin@MikroTik] > ip firewal nat print"
+          }
+        ]
+      },
+        "Assign gateway":{
+          "title":"Assign gateway",
+          "data":[
+          {
+          "id":"0",
+          "command":"[admin@MikroTik] >ip route add gateway=x.x.x.x"
+          },
+          {
+            "id":"1",
+            "command":"[admin@MikroTik] >ip route print"
+          }
+        ]
+      },
+        "Assign DNS":{
+          "title":"Assign DNS",
+           "data":[
+          {
+            "id":"0",
+            "command":"[admin@Mikrotik] >ip dns set primary-dns=x.x.x.x"
+          },
+          {
+            "id":"1",
+            "command":"[admin@Mikrotik] >iip dns set secondary-dns=x.x.x.x"
+          },
+          {
+            "id":"2",
+            "command":"ip dns set allow-remote-requests=yes"
+          }
+        ]
+      },
+        "Create DHCP_server":{
+          "title":"Create DHCP_server",
+          "data":[
+          {
+            "id":"0",
+            "command":"[admin@MikroTik] > ip dhcp-server setup Select interface to run DHCP server on" 
+          },
+          {
+            "id":"1",
+            "command":"dhcp server interface: etherx Select network for DHCP addresses "
+          },
+          {
+            "id":"2",
+            "command":"dhcp address space: x.x.x.0/prefix Select gateway for given network"
+          },
+          {
+            "id":"3",
+            "command":"gateway for dhcp network: x.x.x.x Select pool of ip addresses given out by DHCP server "
+          },
+          {
+            "id":"4",
+            "command":"addresses to give out: x.x.x.x-x.x.x.x Select DNS servers"
+          },
+          {
+            "id":"5",
+            "command":"dns servers: x.x.x.x Select lease time lease time: 10m "
+          }
+        ]
+      },
+        "Create DHCP_client":{
+          "title":"Create DHCP_client",
+          "data":[
+          {
+            "id":"0",
+            "command":"[admin@MikroTik] > ip dhcp-client add interface=ether2 disabled=no"
+          },
+          {
+            "id":"1",
+            "command":"[admin@MikroTik] > ip dhcp-client print"
+          }
+          
+        ]
+      },
+        "Create login page(Hotspot)":{
+          "title":"Create login page(Hotspot)",
+          "data":[
+          {
+            "id":"0",
+            "command":"[admin@MikroTik] > ip dhcp-client print"
+          },
+          {
+            "id":"1",
+            "command":"hotspot interface: ether3 Set HotSpot address for interface"
+          },
+          {
+            "id":"2",
+            "command":"local address of network: x.x.x.x/prefix masquerade network: yes Set pool for HotSpot addresses "
+          }
+          ,
+          {
+            "id":"3",
+            "command":"address pool of network: x.x.x.x-x.x.x.x Select hotspot SSL certificate "
+          },
+          {
+            "id":"4",
+            "command":"select certificate: none Select SMTP server "
+          },
+          {
+            "id":"5",
+            "command":"ip address of smtp server: 0.0.0.0 Setup DNS configuration "
+          },
+          {
+            "id":"6",
+            "command":"dns servers: x.x.x.x DNS name of local hotspot server" 
+          },
+          {
+            "id":"7",
+            "command":"dns name: myhotspot Create local hotspot user name of local hotspot user: admin password for the user"
+          }
+        ]
+      }
+      }
