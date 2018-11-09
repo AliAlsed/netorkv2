@@ -29,6 +29,13 @@ commands:any;
   }
 
   ionViewDidLoad() {
+    if(this.navParams.get('pages') !=null)
+    {
+      this.page=`Switching`
+      this.pages=[];
+      this.pages.push(this.navParams.get('pages'));
+    }
+    else{
     this.pages=[];
     this.page=this.navParams.get('page');
     console.log(this.page);
@@ -61,6 +68,7 @@ commands:any;
       this.pages.push('MLS : Multi-layer switch OR SVI : switch virtual interface');
       this.filteredusers = this.pages;
     }
+  } 
   }
 
   detail(i)

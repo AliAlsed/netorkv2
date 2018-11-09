@@ -1,171 +1,208 @@
 [
   {
     "node":"Interface",
-    "path":"mikrotik/Interface"
-  },
-  {
-    "node":"Assign DNS",
-    "path":"mikrotik/Assign DNS"
-  },
-  {
-    "node":"Assign gateway",
-    "path":"mikrotik/Assign gateway"
+    "path":"Interface",
+    "type":"mikrotik"
   },
   {
     "node":"Setup VLAN",
-    "path":"mikrotik/Setup VLAN"
+    "path":"Setup VLAN",
+    "type":"mikrotik"
+  },
+  {
+    "node":"Assign DNS",
+    "path":"Assign DNS",
+    "type":"mikrotik"
+  },
+  {
+    "node":"Assign gateway",
+    "path":"Assign gateway",
+    "type":"mikrotik"
   },
   {
     "node":"System",
-    "path":"mikrotik/System"
+    "path":"System",
+    "type":"mikrotik"
   },
   {
     "node":"Bridge setup",
-    "path":"mikrotik/Bridge setup"
+    "path":"Bridge setup",
+    "type":"mikrotik"
   },
   {
     "node":"Create a name for network card (interface)",
-    "path":"mikrotik/Create a name for network card (interface)"
+    "path":"Create a name for network card (interface)",
+    "type":"mikrotik"
   },
   {
     "node":"Assign ip address to network card (interface)",
-    "path":"mikrotik/Assign ip address to network card (interface)"
+    "path":"Assign ip address to network card (interface)",
+    "type":"mikrotik"
   },
   {
     "node":"Create NAT rule",
-    "path":"mikrotik/Create NAT rule"
-  },
-  {
-    "node":"Create DHCP_server",
-    "path":"mikrotik/Create DHCP_server"
+    "path":"Create NAT rule",
+    "type":"mikrotik"
   },
   {
     "node":"Create DHCP_client",
-    "path":"mikrotik/Create DHCP_client"
+    "path":"Create DHCP_client",
+    "type":"mikrotik"
+  },
+  {
+    "node":"Create DHCP_server",
+    "path":"Create DHCP_server",
+    "type":"mikrotik"
   },
   {
     "node":"Create login page(Hotspot)",
-    "path":"mikrotik/Create login page(Hotspot)"
-  },
-  {
-    "node":"Create login page(Hotspot)",
-    "path":"mikrotik/Create login page(Hotspot)"
+    "path":"Create login page(Hotspot)",
+    "type":"mikrotik"
   },
   {
     "node":"ConfigrationModeRouter(config)",
-    "path":"cisco/Routing/ConfigrationModeRouter(config)"
+    "path":"ConfigrationModeRouter(config)",
+    "type":"Routing"
   },
   {
     "node":"UserMode",
-    "path":"cisco/Routing/UserMode"
+    "path":"UserMode",
+    "type":"Routing"
   },
   {
-    "node":"Routing protocol",
-    "path":"cisco/Routing/"
+    "node":"Routing protocols",
+    "path":"Routing protocols",
+    "type":"Routing"
+  },
+  {
+    "node":"PRIVILEGE MODE",
+    "path":"PRIVILEGE MODE",
+    "type":"Routing"
   },
   {
     "node":"ACL : Access Control List",
-    "path":"cisco/Switching/ACL : Access Control List"
+    "path":"ACL : Access Control List",
+    "type":"Switching"
   },
   {
     "node":"DHCP : Dynamic Host Configuration Protocol",
-    "path":"cisco/Switching/DHCP : Dynamic Host Configuration Protocol/commands"
+    "path":"DHCP : Dynamic Host Configuration Protocol",
+    "type":"Switching"
   },
   {
     "node":"DTP : (Dynamic trunk protocol )",
-    "path":"cisco/Switching/DTP : (Dynamic trunk protocol )/commands"
+    "path":"DTP : (Dynamic trunk protocol )",
+    "type":"Switching"
   },
   {
     "node":"Etherchannel",
-    "path":"cisco/Switching/Etherchannel/commands"
+    "path":"Etherchannel",
+    "type":"Switching"
   },
   {
     "node":"NAT : Network Address Translation",
-    "path":"cisco/Switching/NAT : Network Address Translation"
+    "path":"NAT : Network Address Translation",
+    "type":"Switching"
   },
   {
     "node":"Port security",
-    "path":"cisco/Switching/Port security/commands"
+    "path":"Port security",
+    "type":"Switching"
   },
   {
     "node":"STP : Spanning Tree Protocol",
-    "path":"cisco/Switching/STP : Spanning Tree Protocol/commands"
+    "path":"STP : Spanning Tree Protocol",
+    "type":"Switching"
   },
   {
     "node":"Sub interface",
-    "path":"cisco/Switching/Sub interface/commands"
+    "path":"Sub interface",
+    "type":"Switching"
   },
   {
     "node":"VLAN : Virtual LAN",
-    "path":"cisco/Switching/VLAN : Virtual LAN/commands"
+    "path":"VLAN : Virtual LAN",
+    "type":"Switching"
   },
   {
     "node":"Vtp : (virtual trunk protocol )",
-    "path":"cisco/Switching/Vtp : (virtual trunk protocol )/commands"
+    "path":"Vtp : (virtual trunk protocol )",
+    "type":"Switching"
   },
   {
     "node":"GRE : Generic Routing Encapsulation",
-    "path":"cisco/Switching/GRE : Generic Routing Encapsulation/commands"
+    "path":"GRE : Generic Routing Encapsulation",
+    "type":"Switching"
   },
   {
     "node":"HSRP : Hot standby routing protocol",
-    "path":"cisco/Switching/HSRP : Hot standby routing protocol/commands"
+    "path":"HSRP : Hot standby routing protocol",
+    "type":"Switching"
   },
   {
     "node":"telnet on router",
-    "path":"cisco/Switching/telnet on router/commands"
+    "path":"telnet on router",
+    "type":"Switching"
   },
   {
     "node":"telnet on switch",
-    "path":"cisco/Switching/telnet on switch/commands"
+    "path":"telnet on switch",
+    "type":"Switching"
   },
   {
     "node":"AAA : Authentication, authorization, accounting",
-    "path":"cisco/Switching/AAA : Authentication, authorization, accounting/commands"
+    "path":"AAA : Authentication, authorization, accounting",
+    "type":"Switching"
   },
   {
     "node":"SSH : Secure Shell",
-    "path":"cisco/Switching/SSH : Secure Shell/commands"
+    "path":"SSH : Secure Shell",
+    "type":"Switching"
   },
   {
     "node":"NTP : Network time protocol",
-    "path":"cisco/Switching/NTP : Network time protocol/commands"
+    "path":"NTP : Network time protocol",
+    "type":"Switching"
   },
   {
     "node":"Cisco password Recovery",
-    "path":"cisco/Switching/Cisco password Recovery"
+    "path":"Cisco password Recovery",
+    "type":"Switching"
   },
   {
     "node":"TFTP server : Text file transfer protocol",
-    "path":"cisco/Switching/TFTP server : Text file transfer protocol/commands"
-  },
-  {
-    "node":"VLAN : Virtual LAN",
-    "path":"cisco/Switching/VLAN : Virtual LAN/commands"
+    "path":"TFTP server : Text file transfer protocol",
+    "type":"Switching"
   },
   {
     "node":"FTP : File Transfer Protocol",
-    "path":"cisco/Switching/FTP : File Transfer Protocol/commands"
+    "path":"FTP : File Transfer Protocol",
+    "type":"Switching"
   },
   {
     "node":"BGP : Border Gateway Protocol",
-    "path":"cisco/Switching/BGP : Border Gateway Protocol/commands"
+    "path":"BGP : Border Gateway Protocol",
+    "type":"Switching"
   },
   {
     "node":"PPPOE : Point to Point Protocol Over Ethernet",
-    "path":"cisco/Switching/PPPOE : Point to Point Protocol Over Ethernet/commands"
+    "path":"PPPOE : Point to Point Protocol Over Ethernet",
+    "type":"Switching"
   },
   {
     "node":"Voice",
-    "path":"cisco/Switching/Voice"
+    "path":"Voice",
+    "type":"Switching"
   },
   {
     "node":"MLS : Multi-layer switch OR SVI : switch virtual interface",
-    "path":"cisco/Switching/MLS : Multi-layer switch OR SVI : switch virtual interface/commands"
+    "path":"MLS : Multi-layer switch OR SVI : switch virtual interface",
+    "type":"Switching"
   },
   {
     "node":"IPv6 : Internet protocol version sex",
-    "path":"cisco/Switching/IPv6 : Internet protocol version sex/commands"
+    "path":"IPv6 : Internet protocol version sex",
+    "type":"Switching"
   }
 
 ]

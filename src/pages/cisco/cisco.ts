@@ -28,6 +28,14 @@ commands:any;
   }
 
   ionViewDidLoad() {
+    if(this.navParams.get('pages') !=null)
+    {
+      this.pages=[];
+      this.page=`Routing`;
+      this.pages.push(this.navParams.get('pages'));
+      
+    }
+    else{ 
     this.pages=[];
     this.page=this.navParams.get('page');
     console.log(this.page);
@@ -40,9 +48,11 @@ commands:any;
       this.filteredusers = this.pages;
     }
   }
+  }
   detail(i){
     this.path = `${this.page}/${i}`;
     if(i != "Routing protocols"){
+      console.log(i);
     this.user.readcisco(this.path).child('commands').on("value",snapshot=>{
       
       this.commands=[];
@@ -68,6 +78,7 @@ commands:any;
     }
   })
   } else{
+    console.log(i)
     this.pages=[];
     this.filteredusers=[];
     this.hide=true;

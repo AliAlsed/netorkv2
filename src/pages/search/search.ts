@@ -4,6 +4,9 @@ import { UsersProvider } from '../../providers/users/users';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { CommandsProvider } from '../../providers/commands/commands';
+import { MikrotikPage } from '../mikrotik/mikrotik';
+import { CiscoPage } from '../cisco/cisco';
+import { SwitchPage } from '../switch/switch';
 
 /**
  * Generated class for the SearchPage page.
@@ -24,8 +27,14 @@ export class SearchPage {
   }
 
   ionViewDidLoad() {
+    this.list=[];
+    this.filteredusers=[];
     this.http.getMCommand().subscribe((data:any)=>{
-      this.list = data;
+      data.forEach(element => {
+        this.list.push(element);
+        this.filteredusers.push(element);
+      });
+      
     })
   }
   searchcommand(searchbar){
@@ -35,20 +44,29 @@ export class SearchPage {
       return;
     }
     this.list = this.list.filter((v) => {
-      if (v.toLowerCase().indexOf(q.toLowerCase()) > -1) {
+      if (v.node.toLowerCase().indexOf(q.toLowerCase()) > -1) {
         return true;
       }
       return false;
     })
-
   }
-  detail(item){
-    this.comm.readm(item).on("value",snapshot=>{
-      snapshot.forEach((snap:any)=>{
-        console.log("title : "+snap.val().command)
-        return false;
-      })
-    })
+  goto(item,type)
+  {
+    if(type == 'mikrotik')
+    {
+     return this.navCtrl.push(MikrotikPage,{'pages':item});
+    }
+    else if(type == 'Routing')
+    {
+      return this.navCtrl.push(CiscoPage,{'pages':item});
+    }
+    else if(type == 'Switching')
+    {
+      return this.navCtrl.push(SwitchPage,{'pages':item});
+    }
+  }
+  fill(){
+    this.list=this.filteredusers;
   }
 
 }

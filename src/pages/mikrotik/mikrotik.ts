@@ -1,5 +1,5 @@
 import { MikrotikdetailPage } from './../mikrotikdetail/mikrotikdetail';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsersProvider } from '../../providers/users/users';
 
@@ -19,11 +19,19 @@ export class MikrotikPage {
   list:any;
   commands:any;
   searchstring:any;
+  node:any;
   filteredusers:any;
   constructor(public navCtrl: NavController, public navParams: NavParams , public user:UsersProvider) {
   }
 
   ionViewDidLoad() {
+    if(this.navParams.get('pages') !=null)
+    {
+      this.list=[];
+      this.node=`${this.navParams.get('pages')}`;
+      this.list.push(this.navParams.get('pages'));
+    }
+    else{
     this.list=[];
     this.list.push('Interface');
     this.list.push('Setup VLAN');
@@ -39,11 +47,14 @@ export class MikrotikPage {
     this.list.push('Create login page(Hotspot)');
     this.filteredusers = this.list;
 
+    }
+
     console.log('ionViewDidLoad MikrotikPage');
   }
 
   detail(node){
-    this.user.read(node).on("value",snapshot=>{
+    this.node=`${node}`;
+    this.user.read(this.node).on("value",snapshot=>{
       this.commands=[];
       snapshot.forEach( (snap) =>{
         console.log(snap.key)

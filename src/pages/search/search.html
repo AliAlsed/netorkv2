@@ -17,9 +17,10 @@
 
 
 <ion-content padding>
+    <ion-searchbar [(ngModel)]="searchstring" (input)="searchcommand($event)" (ionClear)="fill()"placeholder="Search"></ion-searchbar>
 <ion-list>
   <ion-item *ngFor="let item of list">
-    <p style="color: black" (click)="detail(item?.path)">{{item?.node}}</p>
+    <p style="color: black" (click)="goto(item?.path,item?.type)">{{item?.node}}</p>
     </ion-item>
 </ion-list>
 </ion-content>
