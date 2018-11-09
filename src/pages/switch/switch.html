@@ -1,0 +1,31 @@
+<!--
+  Generated template for the SwitchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="nav">
+    <ion-title>Cisco</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-searchbar [(ngModel)]="searchstring" (input)="searchcommand($event)" placeholder="Search"></ion-searchbar>
+
+  <div *ngIf="hide" style="text-align:center; padding:15px; margin-top: 35px; font-size: 20px">
+    <p style="color: black"> {{switching}}</p>
+ </div>
+   <ion-grid >
+       <ion-row >
+         <ion-col col-6 *ngFor="let i of pages" style="text-align:center; margin-top:50px;padding:10px">
+           <div (click)="detail(i)">
+               <img src="assets/imgs/ccna.png">
+               <p style="text-align: center">{{i}}</p>
+           </div>
+   
+         </ion-col>
+       </ion-row>
+     </ion-grid>
+</ion-content>

@@ -1,101 +1,174 @@
-{ 
-        "Interface":{
-          "title":"Interface",
-          "data":[
-          {
-            "id":"0",
-            "title":"show interface",
-            "command":"[admin@MikroTik] >interface print"
-          },
-          {
-            "id":"1",
-            "title":"disable ether",
-            "command":"[admin@MikroTik] >interface ethernet disable etherx"
-          },
-          {
-            "id":"2",
-            "title":"enable ether",
-            "command":"[admin@MikroTik] >interface ethernet enable etherx"
-          },       
-          {
-            "id":"3",
-            "title":"monitor traffic",
-            "command":"[admin@MikroTik] >interface monitor-traffic etherx"
-          },
-          {
-            "id":"4",
-            "title":"add comment to ether",
-            "command":"[admin@MikroTik] >interface ethernet set comment=INTERNET numbers=etherx"
-          },       {
-            "id":"5",
-            "title":" refer to number card 0",
-            "command":"[admin@MikroTik] >interface ethernet monitor 0"
-          }
-        ]
-      },
-      "SetupVLAN":{
-        "title":"Setup VLAN",
-        "data":[
-        {
-          "id":"0",
-          "command":"[admin@MikroTik] >interface vlan add name=vlan10 vlan_id4 interface =etherx"
-        },
-        {
-          "id":"1",
-          "command":"[admin@MikroTik] >interface vlan print"
-        },
-        {
-          "id":"2",
-          "command":"[admin@MikroTik] >interface vlan disable 0"
-        }
-      ]
-    },
-    "System":{
-      "title":"System",
-      "data":[
-      {
-        "id":"0",
-        "title":"Check  RouterBOARD Bootloader version",
-        "command":"[admin@MikroTik]> system routerboard print"
-      },
-      {
-        "id":"1",
-        "title":"upgrade  RouterBOARD  version",
-        "command":"[admin@MikroTik] > system routerboard upgrade"
-      },
-      {
-        "id":"2",
-        "title":"reset RouterBOARD rconfiguration",
-        "command":"[admin@MikroTik] > system reset-configuration"
-      },
-      {
-        "id":"3",
-        "title":"system reboot",
-        "command":"[admin@MikroTik] > system reboot"
-      },
-      {
-        "id":"4",
-        "title":"Change router name",
-        "command":"[admin@MikroTik] > system identity set name=MK"
-      },
-      {
-        "id":"5",
-        "title":"license level",
-        "command":"[admin@MikroTika] > system license print"
-      },
-      {
-        "id":"6",
-        "title":"set telnet address",
-        "command":"[admin@MikroTik] > system telnet address=x.x.x.x"
-      },
-      {
-        "id":"7",
-        "title":"system shutdown",
-        "command":"[admin@MikroTika] > system shutdown"
-      }
-    ]
+[
+  {
+    "node":"Interface",
+    "path":"mikrotik/Interface"
+  },
+  {
+    "node":"Assign DNS",
+    "path":"mikrotik/Assign DNS"
+  },
+  {
+    "node":"Assign gateway",
+    "path":"mikrotik/Assign gateway"
+  },
+  {
+    "node":"Setup VLAN",
+    "path":"mikrotik/Setup VLAN"
+  },
+  {
+    "node":"System",
+    "path":"mikrotik/System"
+  },
+  {
+    "node":"Bridge setup",
+    "path":"mikrotik/Bridge setup"
+  },
+  {
+    "node":"Create a name for network card (interface)",
+    "path":"mikrotik/Create a name for network card (interface)"
+  },
+  {
+    "node":"Assign ip address to network card (interface)",
+    "path":"mikrotik/Assign ip address to network card (interface)"
+  },
+  {
+    "node":"Create NAT rule",
+    "path":"mikrotik/Create NAT rule"
+  },
+  {
+    "node":"Create DHCP_server",
+    "path":"mikrotik/Create DHCP_server"
+  },
+  {
+    "node":"Create DHCP_client",
+    "path":"mikrotik/Create DHCP_client"
+  },
+  {
+    "node":"Create login page(Hotspot)",
+    "path":"mikrotik/Create login page(Hotspot)"
+  },
+  {
+    "node":"Create login page(Hotspot)",
+    "path":"mikrotik/Create login page(Hotspot)"
+  },
+  {
+    "node":"ConfigrationModeRouter(config)",
+    "path":"cisco/Routing/ConfigrationModeRouter(config)"
+  },
+  {
+    "node":"UserMode",
+    "path":"cisco/Routing/UserMode"
+  },
+  {
+    "node":"Routing protocol",
+    "path":"cisco/Routing/"
+  },
+  {
+    "node":"ACL : Access Control List",
+    "path":"cisco/Switching/ACL : Access Control List"
+  },
+  {
+    "node":"DHCP : Dynamic Host Configuration Protocol",
+    "path":"cisco/Switching/DHCP : Dynamic Host Configuration Protocol/commands"
+  },
+  {
+    "node":"DTP : (Dynamic trunk protocol )",
+    "path":"cisco/Switching/DTP : (Dynamic trunk protocol )/commands"
+  },
+  {
+    "node":"Etherchannel",
+    "path":"cisco/Switching/Etherchannel/commands"
+  },
+  {
+    "node":"NAT : Network Address Translation",
+    "path":"cisco/Switching/NAT : Network Address Translation"
+  },
+  {
+    "node":"Port security",
+    "path":"cisco/Switching/Port security/commands"
+  },
+  {
+    "node":"STP : Spanning Tree Protocol",
+    "path":"cisco/Switching/STP : Spanning Tree Protocol/commands"
+  },
+  {
+    "node":"Sub interface",
+    "path":"cisco/Switching/Sub interface/commands"
+  },
+  {
+    "node":"VLAN : Virtual LAN",
+    "path":"cisco/Switching/VLAN : Virtual LAN/commands"
+  },
+  {
+    "node":"Vtp : (virtual trunk protocol )",
+    "path":"cisco/Switching/Vtp : (virtual trunk protocol )/commands"
+  },
+  {
+    "node":"GRE : Generic Routing Encapsulation",
+    "path":"cisco/Switching/GRE : Generic Routing Encapsulation/commands"
+  },
+  {
+    "node":"HSRP : Hot standby routing protocol",
+    "path":"cisco/Switching/HSRP : Hot standby routing protocol/commands"
+  },
+  {
+    "node":"telnet on router",
+    "path":"cisco/Switching/telnet on router/commands"
+  },
+  {
+    "node":"telnet on switch",
+    "path":"cisco/Switching/telnet on switch/commands"
+  },
+  {
+    "node":"AAA : Authentication, authorization, accounting",
+    "path":"cisco/Switching/AAA : Authentication, authorization, accounting/commands"
+  },
+  {
+    "node":"SSH : Secure Shell",
+    "path":"cisco/Switching/SSH : Secure Shell/commands"
+  },
+  {
+    "node":"NTP : Network time protocol",
+    "path":"cisco/Switching/NTP : Network time protocol/commands"
+  },
+  {
+    "node":"Cisco password Recovery",
+    "path":"cisco/Switching/Cisco password Recovery"
+  },
+  {
+    "node":"TFTP server : Text file transfer protocol",
+    "path":"cisco/Switching/TFTP server : Text file transfer protocol/commands"
+  },
+  {
+    "node":"VLAN : Virtual LAN",
+    "path":"cisco/Switching/VLAN : Virtual LAN/commands"
+  },
+  {
+    "node":"FTP : File Transfer Protocol",
+    "path":"cisco/Switching/FTP : File Transfer Protocol/commands"
+  },
+  {
+    "node":"BGP : Border Gateway Protocol",
+    "path":"cisco/Switching/BGP : Border Gateway Protocol/commands"
+  },
+  {
+    "node":"PPPOE : Point to Point Protocol Over Ethernet",
+    "path":"cisco/Switching/PPPOE : Point to Point Protocol Over Ethernet/commands"
+  },
+  {
+    "node":"Voice",
+    "path":"cisco/Switching/Voice"
+  },
+  {
+    "node":"MLS : Multi-layer switch OR SVI : switch virtual interface",
+    "path":"cisco/Switching/MLS : Multi-layer switch OR SVI : switch virtual interface/commands"
+  },
+  {
+    "node":"IPv6 : Internet protocol version sex",
+    "path":"cisco/Switching/IPv6 : Internet protocol version sex/commands"
   }
-    }
+
+]
      
           
          

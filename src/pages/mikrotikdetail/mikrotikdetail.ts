@@ -14,16 +14,15 @@ import {  NavController, NavParams } from 'ionic-angular';
 })
 export class MikrotikdetailPage {
 title:any;
-sub:any;
+disc:any;
 list:any;
 command:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
   ionViewDidLoad() {
     this.title=this.navParams.get('node');
-    this.sub=this.navParams.get('title');
+    this.disc=this.navParams.get('title');
     this.list=[];
     this.command=[];
     this.list.push(this.navParams.get('data'));
@@ -34,3 +33,33 @@ command:any;
   }
 
 }
+
+/*
+[0]:
+comands{
+
+//
+
+//
+
+
+//
+}
+
+push : -sdfdfgh
+
+set : commands 
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

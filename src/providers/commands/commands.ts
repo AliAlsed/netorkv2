@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 /*
   Generated class for the CommandsProvider provider.
@@ -9,11 +10,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CommandsProvider {
 
-  constructor() {
+  constructor(public http: Http) {
     
   }
 
   getMCommand(){
+    return this.http.get('/assets/data.json')
+    .map(response => response.json());
   }
-
 }

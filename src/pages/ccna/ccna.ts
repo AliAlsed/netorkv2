@@ -1,3 +1,4 @@
+import { SwitchPage } from './../switch/switch';
 import { CiscoPage } from './../cisco/cisco';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
@@ -23,6 +24,11 @@ export class CcnaPage {
     this.ccna.push('Switching');
   }
   detail(i){
+    if(i=="Routing"){
     return this.navCtrl.push(CiscoPage,{'page':i});
+    }
+    else{
+      return this.navCtrl.push(SwitchPage,{'page':i});
+    }
   }
 }

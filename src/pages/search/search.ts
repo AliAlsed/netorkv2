@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
+import { UsersProvider } from '../../providers/users/users';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { CommandsProvider } from '../../providers/commands/commands';
 
 /**
  * Generated class for the SearchPage page.
@@ -12,12 +16,39 @@ import {  NavController, NavParams } from 'ionic-angular';
   templateUrl: 'search.html',
 })
 export class SearchPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  list:any;
+  commands:any;
+  searchstring:any;
+  filteredusers:any;
+  constructor(public http:CommandsProvider, public comm:UsersProvider,public navCtrl: NavController, public navParams: NavParams , public user:UsersProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPage');
+    this.http.getMCommand().subscribe((data:any)=>{
+      this.list = data;
+    })
+  }
+  searchcommand(searchbar){
+    this.list=this.filteredusers;
+    var q = searchbar.target.value;
+    if (q.trim() == '') {
+      return;
+    }
+    this.list = this.list.filter((v) => {
+      if (v.toLowerCase().indexOf(q.toLowerCase()) > -1) {
+        return true;
+      }
+      return false;
+    })
+
+  }
+  detail(item){
+    this.comm.readm(item).on("value",snapshot=>{
+      snapshot.forEach((snap:any)=>{
+        console.log("title : "+snap.val().command)
+        return false;
+      })
+    })
   }
 
 }

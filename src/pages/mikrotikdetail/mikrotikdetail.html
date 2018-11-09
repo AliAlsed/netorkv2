@@ -18,15 +18,17 @@
       <img src="../../assets/imgs/if_modem_531901.png" width="150px">
       <p style="font-size: 15px; font-family: 'Times New Roman', Times, serif; font-weight: bold"> {{title}}</p>
   </div>
-  <div style="text-align: center; padding: 15px;margin-top: 5px" *ngIf="sub">
-    <p style="font-size: 15px; font-family: 'Times New Roman', Times, serif; font-weight: bold">{{sub}}</p>
+  
+  <div style="text-align: center; padding: 15px;margin-top: 15px" *ngIf="disc">
+  <p>{{disc}}</p>
   </div>
+  
   <ion-list>
     <ion-item *ngFor="let i of command">
-      <p  *ngIf="i.title != null" style="color: black">{{i.title}}:</p><br>
+      <p  *ngIf="i.title != null" style="color: dodgerblue">{{i.title}}:</p>
       
       <ion-note text-wrap style="color:black">{{i.command}}</ion-note>
-      <p text-wrap *ngIf="i.disc != null" style="color: black">{{i.disc}}:</p><br>
+      <p text-wrap *ngIf="i.disc != null" style="color: rgb(167, 45, 45)">{{i.disc}}:</p>
     </ion-item>
   </ion-list>
 

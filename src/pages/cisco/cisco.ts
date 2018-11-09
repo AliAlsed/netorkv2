@@ -19,6 +19,8 @@ page:any;
 pages:any;
 path:any;
 arr:any;
+searchstring:any;
+filteredusers:any;
 hide = false;
 Routing="";
 commands:any;
@@ -34,7 +36,8 @@ commands:any;
       this.pages.push('ConfigrationModeRouter(config)');
       this.pages.push('PRIVILEGE MODE');
       this.pages.push('Routing protocols');
-      this.pages.push('UserMoode');
+      this.pages.push('UserMode');
+      this.filteredusers = this.pages;
     }
   }
   detail(i){
@@ -66,6 +69,7 @@ commands:any;
   })
   } else{
     this.pages=[];
+    this.filteredusers=[];
     this.hide=true;
     this.Routing="IGP (Interior Gateway Protocol)";
     this.pages.push('Dynamic Route');
@@ -73,9 +77,24 @@ commands:any;
     this.pages.push('Dynamic Route - RIP Protocol');
     this.pages.push('Dynamic Route EIGRP Protocol');
     this.pages.push('Static Route');
+    this.filteredusers=this.pages;
     this.page=`${this.page}/${i}/IGP (Interior Gateway Protocol)`;
   } 
 
+}
+
+searchcommand(searchbar){
+  this.pages=this.filteredusers;
+  var q = searchbar.target.value;
+  if (q.trim() == '') {
+    return;
+  }
+  return this.pages = this.pages.filter((v) => {
+    if (v.toLowerCase().indexOf(q.toLowerCase()) > -1) {
+      return true;
+    }
+    return false;
+  })
 }
 
 

@@ -6,10 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+  <ion-navbar color="nav">
     <ion-title>myAccount</ion-title>
   </ion-navbar>
 
@@ -17,5 +14,25 @@
 
 
 <ion-content padding>
+    <div style="text-align:center;padding:15px;margin-top: 25px">
+        <img src="assets/imgs/log.png" alt="" srcset="">
+      </div>
 
+      <ion-list>
+
+          <ion-item>
+              
+            <ion-label floating> <ion-icon name="mail"></ion-icon> Email</ion-label>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating> <ion-icon name="lock"></ion-icon> Password</ion-label>
+            <ion-input type="password" [(ngModel)]="pass"></ion-input>
+          </ion-item>
+        </ion-list>
+        
+        <button ion-button full round (click)="login()" color="nav" style="padding: 15px">LOGIN</button>
+ 
+        <p style="color: #292C2F;text-align: center; margin-top: 25px" (click)="reg()"> DON’T HAVE AN ACCOUNT YET?  SIGN UP </p>
 </ion-content>

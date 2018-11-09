@@ -10,7 +10,7 @@
       <button menuClose ion-item *ngFor="let p of pages" [class.active]="check(p)" [class.inactive]="checkm(p)"(click)="openPage(p)">
         {{p.title}}
       </button>
-      <button menuClose ion-item style="\ margin-top: 195px" [class.inactive]="true" (click)="logout()">logout</button>
+      <button menuClose ion-item style="margin-top: 195px" [class.inactive]="true" (click)="logout()">logout</button>
     </ion-list>
   </ion-content>
 

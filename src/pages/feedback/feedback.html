@@ -5,17 +5,27 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar color="nav">
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
       </button>
     <ion-title>feedback</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list no-lines style="margin-top:45px">
+
+    <ion-item>   
+      <ion-label floating> Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+  <ion-item>   
+    <ion-label floating> Comments</ion-label>
+    <ion-textarea type="text" [(ngModel)]="comment"></ion-textarea>
+  </ion-item>
+  </ion-list>
+  <button ion-button full block  (click)="add()" color="btn" style="padding: 15px;margin-top: 185px">add comment</button>
 
 </ion-content>
