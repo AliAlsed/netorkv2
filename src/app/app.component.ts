@@ -7,17 +7,17 @@ import { MikrotikPage } from './../pages/mikrotik/mikrotik';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { SearchPage } from '../pages/search/search';
 import { FeedbackPage } from '../pages/feedback/feedback';
 import * as firebase from 'firebase';
+import { SplashPage } from '../pages/slpash/slpash';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any ;
+  rootPage = SplashPage ;
   activePage:any;
   inactive:any;
 
@@ -25,19 +25,9 @@ export class MyApp {
 
   constructor(public platform: Platform, 
     public statusBar: StatusBar,
-     public splashScreen: SplashScreen,
       public afauth:AngularFireAuth) {
     this.initializeApp();
 
-    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-      if (!user) {
-      this.rootPage = MyAccountPage;
-      unsubscribe();
-      } else {
-      this.rootPage = MikrotikPage;
-      unsubscribe();
-      }
-      });
       this.pages = [
         { title: 'MikroTik Commands', component: MikrotikPage },
         { title: 'CCNA 200 - 125 Commands', component: CcnaPage },
@@ -59,7 +49,6 @@ export class MyApp {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
     });
   }
 

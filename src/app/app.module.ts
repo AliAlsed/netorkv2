@@ -10,7 +10,6 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { CcnaPage } from '../pages/ccna/ccna';
 import { AboutPage } from '../pages/about/about';
 import { FeedbackPage } from '../pages/feedback/feedback';
@@ -27,6 +26,7 @@ import { MikrotikdetailPage } from '../pages/mikrotikdetail/mikrotikdetail';
 import { CiscoPage } from '../pages/cisco/cisco';
 import { SwitchPage } from '../pages/switch/switch';
 import { RegisterPage } from '../pages/register/register';
+import { SplashPage } from '../pages/slpash/slpash';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBQ6hK0YTIf4cXdkDQue8Q7qDBNsE9QMZQ",
@@ -48,6 +48,7 @@ export const firebaseConfig = {
     MikrotikPage,
     MikrotikdetailPage,
     MyAccountPage,
+    SplashPage,
     SearchPage,
     RegisterPage,
     SwitchPage,
@@ -73,6 +74,7 @@ export const firebaseConfig = {
     FeedbackPage,
     MikrotikPage,
     RegisterPage,
+    SplashPage,
     MyAccountPage,
     MikrotikdetailPage,
     SearchPage,
@@ -81,7 +83,6 @@ export const firebaseConfig = {
   ],
   providers: [
     StatusBar,
-    SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CommandsProvider,
     UsersProvider

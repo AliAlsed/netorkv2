@@ -46,7 +46,7 @@ export class MyAccountPage {
     }
   }
   reg(){
-   return this.navCtrl.push(RegisterPage);
+   this.navCtrl.push(RegisterPage);
   }
 
 }

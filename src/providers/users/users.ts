@@ -20,23 +20,23 @@ export class UsersProvider {
   readcisco(page):firebase.database.Reference{
     return this.firecisco.child(`${page}`);
   }
-  readm(path):firebase.database.Reference{
+   readm(path):firebase.database.Reference{
     return firebase.database().ref(`${path}`);
   }
-   Register(name,email,pass):Promise<any>{
-    return  this.afauth.auth.createUserWithEmailAndPassword(email, pass).then(()=>{
+   async Register(name,email,pass):Promise<any>{
+    return  await this.afauth.auth.createUserWithEmailAndPassword(email, pass).then(()=>{
       this.db.database.ref('users').push({
         Name:name,
         Email:email
       });
     });
   }
-   Login(email,pass):Promise<any>{
-    return this.afauth.auth.signInWithEmailAndPassword(email, pass);
+   async Login(email,pass):Promise<any>{
+    return await this.afauth.auth.signInWithEmailAndPassword(email, pass);
 
   }
-  feed(name,comment){
-    return this.db.database.ref('feedback').push({
+  async feed(name,comment) {
+    return await this.db.database.ref('feedback').push({
       Name:name,
       Comment:comment
     });
