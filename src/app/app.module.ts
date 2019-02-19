@@ -29,12 +29,12 @@ import { RegisterPage } from '../pages/register/register';
 import { SplashPage } from '../pages/slpash/slpash';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBQ6hK0YTIf4cXdkDQue8Q7qDBNsE9QMZQ",
-  authDomain: "network-8136a.firebaseapp.com",
-  databaseURL: "https://network-8136a.firebaseio.com",
-  projectId: "network-8136a",
-  storageBucket: "network-8136a.appspot.com",
-  messagingSenderId: "399115352231"
+  apiKey: "AIzaSyBC8zkp4xwQz9M39Pw4ViFBY6WL__LdhBQ",
+  authDomain: "networkiq-71773.firebaseapp.com",
+  databaseURL: "https://networkiq-71773.firebaseio.com",
+  projectId: "networkiq-71773",
+  storageBucket: "networkiq-71773.appspot.com",
+  messagingSenderId: "77197213439"
 };
 @NgModule({
   declarations: [
