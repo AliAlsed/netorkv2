@@ -37,7 +37,7 @@ export class MyAccountPage {
         this.navCtrl.setRoot(MikrotikPage);
       },(err)=>{
         let alert = this.alert.create({
-          subTitle: err.toString(),
+          subTitle: "حدث خطأ اثناء التسجيل",
           cssClass:"alert",
           buttons:["حسنا"]
         });

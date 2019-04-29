@@ -35,20 +35,6 @@ command:any;
 }
 
 /*
-[0]:
-comands{
-
-//
-
-//
-
-
-//
-}
-
-push : -sdfdfgh
-
-set : commands 
 
 
 

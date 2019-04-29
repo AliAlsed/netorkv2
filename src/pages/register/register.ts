@@ -40,7 +40,6 @@ export class RegisterPage {
         this.app.getRootNav().setRoot(MikrotikPage);
 
       },(err)=>{
-        console.log(err);
       });
     }
   }
