@@ -172,6 +172,7 @@ commands:any;
      }
 
   }
+  
   searchcommand(searchbar){
     this.pages=this.filteredusers;
     var q = searchbar.target.value;
@@ -184,5 +185,8 @@ commands:any;
       }
       return false;
     })
+  }
+  fill(){
+    this.pages=this.filteredusers;
   }
   }

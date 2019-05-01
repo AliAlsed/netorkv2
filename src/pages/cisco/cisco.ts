@@ -44,9 +44,10 @@ commands:any;
       this.pages.push('ConfigrationModeRouter(config)');
       this.pages.push('PRIVILEGE MODE');
       this.pages.push('Routing protocols');
-      this.pages.push('UserMode');
+      this.pages.push('UserMoode');
       this.filteredusers = this.pages;
-    }
+    } 
+    
   }
   }
   detail(i){
@@ -106,6 +107,9 @@ searchcommand(searchbar){
     }
     return false;
   })
+}
+fill(){
+  this.pages=this.filteredusers;
 }
 
 

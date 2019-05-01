@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { UsersProvider } from '../../providers/users/users';
@@ -23,19 +24,20 @@ export class SearchPage {
   commands:any;
   searchstring:any;
   filteredusers:any;
-  constructor(public http:CommandsProvider, public comm:UsersProvider,public navCtrl: NavController, public navParams: NavParams , public user:UsersProvider) {
+  constructor(public http:HttpClient, public comm:UsersProvider,public navCtrl: NavController, public navParams: NavParams , public user:UsersProvider) {
   }
 
   ionViewDidLoad() {
     this.list=[];
     this.filteredusers=[];
-    this.http.getMCommand().subscribe((data:any)=>{
+    this.http.get('assets/data.json')
+    .subscribe((data:any)=>  {
       data.forEach(element => {
         this.list.push(element);
         this.filteredusers.push(element);
       });
-      
-    })
+    }
+    )
   }
   searchcommand(searchbar){
     this.list=this.filteredusers;

@@ -27,6 +27,8 @@ import { CiscoPage } from '../pages/cisco/cisco';
 import { SwitchPage } from '../pages/switch/switch';
 import { RegisterPage } from '../pages/register/register';
 import { SplashPage } from '../pages/slpash/slpash';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpClientModule } from '@angular/common/http';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBC8zkp4xwQz9M39Pw4ViFBY6WL__LdhBQ",
@@ -59,6 +61,7 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     AngularFireDatabaseModule,
     AngularFireAuthModule
@@ -85,6 +88,7 @@ export const firebaseConfig = {
     StatusBar,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CommandsProvider,
+    SplashScreen,
     UsersProvider
   ]
 })

@@ -9,8 +9,8 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SearchPage } from '../pages/search/search';
 import { FeedbackPage } from '../pages/feedback/feedback';
-import * as firebase from 'firebase';
 import { SplashPage } from '../pages/slpash/slpash';
+import { SplashScreen } from '@ionic-native/splash-screen';
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,9 +25,9 @@ export class MyApp {
 
   constructor(public platform: Platform, 
     public statusBar: StatusBar,
+   private Splashscreen:SplashScreen,
       public afauth:AngularFireAuth) {
     this.initializeApp();
-
       this.pages = [
         { title: 'MikroTik Commands', component: MikrotikPage },
         { title: 'CCNA 200 - 125 Commands', component: CcnaPage },
@@ -42,13 +42,12 @@ export class MyApp {
     
   } 
 
-  ionViewDidLoad(){
- 
-  }
+
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.styleDefault();     
+      this.Splashscreen.hide();
     });
   }
 

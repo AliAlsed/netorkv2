@@ -1,6 +1,6 @@
 import { MikrotikdetailPage } from './../mikrotikdetail/mikrotikdetail';
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { UsersProvider } from '../../providers/users/users';
 
 /**
@@ -10,7 +10,6 @@ import { UsersProvider } from '../../providers/users/users';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-mikrotik',
   templateUrl: 'mikrotik.html',
@@ -81,6 +80,9 @@ export class MikrotikPage {
       return false;
     })
 
+  }
+  fill(){
+    this.list=this.filteredusers;
   }
 
 }

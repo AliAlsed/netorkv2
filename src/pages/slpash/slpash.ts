@@ -1,7 +1,7 @@
 import { MikrotikPage } from './../mikrotik/mikrotik';
 import { MyAccountPage } from './../my-account/my-account';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 /**
  * Generated class for the SlpashPage page.
